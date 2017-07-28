@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body background= "Translatingg.jpg">
+
+<!--Translate a couple words-->
+<script>
+var str = "Hello! My name is Mariam";
+
+for (var i=0; i < str.length; i++){
+ if (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u"){
+     document.write("ub" + str.charAt(i));
+  }
+     else{
+       document.write(str.charAt(i));
+     }
+ }
+ </script>
+
+<!--Text (Input) Box-->
+<form>
+  <b><br>Enter words to translate.<br></b>
+  <input type="text" name="word" id = "word">
+  <br>
+</form>
+
+<!--Translate Button-->
+<button type="button" onclick="Translate()" > Translate </button>
+
+<!--Function for button-->
+<script>
+function Translate(){
+  var str2 = document.getElementById("word").value; //word entered by user
+  var text="";
+  for (var i=0; i < str2.length; i++){
+    if (str2.charAt(i) == "a" ||
+        str2.charAt(i) == "e" ||
+        str2.charAt(i) == "i" ||
+        str2.charAt(i) == "o" ||
+        str2.charAt(i) == "u"){
+text= text+"ub"
+}
+text= text+str2.charAt(i);
+  }
+  document.getElementById("show").innerHTML = text;
+}
+</script>
+
+<!--Created paragraph to display translation-->
+<p id="show"> </p>
+
+
+</body>
+</html>
